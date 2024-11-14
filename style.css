@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Arima:wght@100..700&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arima:wght@100..700&family=Danfo&display=swap');
 
 *{
     margin: 0;
@@ -6,20 +6,84 @@
 }
 
 :root{
-   --fonte-destaque:"Arima", system-ui;
-   --fonte-texto: "Playwrite GB S", cursive;
-   --cor1: #7400b8ff;
-   --cor2: #6930c3ff;
-   --cor3: #5e60ceff;
-   --cor4: #5390d9ff;
-   --cor5: #4ea8deff;
-   --cor6: #000;
-
+    --fonte-destaque: "Danfo", serif;
+    --fonte-texto: "Arima", serif;
+    --cor1: rgb(253, 253, 253);
+    --cor2: rgb(73, 73, 177);
+    --cor3: #20c0d9;
+    --cor4: rgb(65, 68, 172);
+    --cor5: rgb(115, 21, 150);
+    --cor6: #000000;
 }
 
 body{
-    background-color: var(--cor1);
+    background-color: var(--cor5);
     font-family: var(--fonte-texto);
+}
+
+#caixa{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 4rem;
+    gap: 2rem;
+}
+
+.cartao{
+    margin: 1rem;
+    background-color: var(--cor3);
+    height: 20rem;
+    flex-grow: 1;
+    flex-basis: calc(33% - 6rem);
+}
+
+.cartao__conteudo{
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    transform-style: preserve-3d;
+    transition: transform 300ms ease-in-out;
+}
+
+.cartao:hover .cartao__conteudo{
+    transform: rotateY(180deg);
+}
+
+.cartao__conteudo h3{
+    border: 2px solid var(--cor6);
+    color: var(--cor5);
+    font-family: var(--fonte-texto);
+    text-align: center;
+    padding: 0.5rem;
+    position: absolute;
+    margin: 0.6rem;
+    border-radius: 0.6rem;
+    font-size: 1.5vw;
+    backface-visibility: hidden;
+}
+
+.cartao__conteudo__pergunta{
+    font-size: 1.5rem;
+    margin: 2.5rem;
+}
+
+.cartao__conteudo__pergunta,
+.cartao__conteudo__resposta{
+    backface-visibility: hidden;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.cartao__conteudo p {
+    margin: 1rem;
+    padding: 1.3rem;
+}
+
+.cartao__conteudo__resposta{
+    font-size: 1.5rem;
+    transform: rotateY(180deg);
 }
 
 footer{
